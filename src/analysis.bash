@@ -3,6 +3,7 @@
 make
 
 bin_path="./bin/"
+py_prog="src/analysis.py"
 
 for prog in seq_array add_matrix; do
     echo "Running $prog"
@@ -13,7 +14,7 @@ for prog in seq_array add_matrix; do
         done
     done
     echo "Plotting $prog"
-    python3 src/seq_array_analysis.py output_$prog.txt ${prog}_analysis.png
+    python3 $py_prog output_$prog.txt ${prog}_analysis.png
     echo "Cleaning up"
     rm output_$prog.txt
     printf "Done with %s\n" $prog

@@ -4,7 +4,7 @@ import sys
 
 # Check command-line arguments
 if len(sys.argv) != 3:
-    print("Usage: python seq_array_analysis.py <data_file> <output_png>")
+    print("Usage: python3 analysis.py <data_file> <output_png>")
     sys.exit(1)
 
 # Load the data
