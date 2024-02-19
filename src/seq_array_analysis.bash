@@ -9,5 +9,5 @@ for i in {4..11}; do
     done
 done
 
-python3 src/seq_array_analysis.py
+python3 src/seq_array_analysis.py output.txt seq_array.png
 rm output.txt

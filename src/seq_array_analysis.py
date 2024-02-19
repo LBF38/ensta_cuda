@@ -1,16 +1,22 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import sys
+
+# Check command-line arguments
+if len(sys.argv) != 3:
+    print("Usage: python seq_array_analysis.py <data_file> <output_png>")
+    sys.exit(1)
 
 # Load the data
 data = pd.read_csv(
-    "output.txt", header=None, names=["Size", "Operation", "Array", "Time"]
+    sys.argv[1], header=None, names=["Size", "Operation", "Array", "Time"]
 )
 
 # Convert 'Size' to numeric, errors='coerce' will replace non-numeric values with NaN
-data["Size"] = pd.to_numeric(data["Size"], errors='coerce')
+data["Size"] = pd.to_numeric(data["Size"], errors="coerce")
 
 # Drop rows with NaN values in 'Size' column
-data = data.dropna(subset=['Size'])
+data = data.dropna(subset=["Size"])
 
 # Separate the data for the initialization and addition operations
 init_data = data[data["Operation"] == "Initialization"]
@@ -34,5 +40,5 @@ add_means.plot(kind="bar", yerr=add_stds, ax=ax[1])
 ax[1].set_ylabel("Addition time (s)")
 ax[1].set_title("Addition time for different array sizes")
 
-plt.tight_layout()
-plt.savefig("output.png")
+# Save the plot to the specified PNG file
+plt.savefig(sys.argv[2])
