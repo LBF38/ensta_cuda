@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
   add_arrays(array1, array2, result, size);
   end = clock();
   cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-  printf("%d,Addition,,%f\n", size, cpu_time_used);
+  printf("%d,Addition,total,%f\n", size, cpu_time_used);
 
   // Print the result array
   //   for (int i = 0; i < size; i++) {

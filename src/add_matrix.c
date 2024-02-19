@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
   add_matrices(matrix1, matrix2, result, size);
   end = clock();
   cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-  printf("%d,Addition,result,%f\n", size, cpu_time_used);
+  printf("%d,Addition,total,%f\n", size, cpu_time_used);
 
   for (int i = 0; i < size; i++) {
     free(matrix1[i]);
