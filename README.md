@@ -5,3 +5,9 @@ It is for discovering the basics of CUDA programming and the use of the GPU for 
 
 > [!TIP]
 > You can see the subject of the TP [here](./docs/240208%20TP%20GPU%20CUDA.pdf).
+
+## Documentation & notes
+
+🚧 Work in progress 🚧
+
+![my gpu config](image.png)
