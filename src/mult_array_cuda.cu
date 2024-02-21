@@ -15,8 +15,16 @@ void initializeArray(float *a, int n) {
     a[i] = rand() / (float)RAND_MAX;
 }
 
-int main(void) {
-  int N = 1 << 20; // 1M elements
+int main(int argc, char *argv[]) {
+  if (argc != 4) {
+    fprintf(stderr, "Usage: %s <input size> <grid size> <block size>\n",
+            argv[0]);
+    return 1;
+  }
+
+  int N = atoi(argv[1]);         // input size
+  int gridSize = atoi(argv[2]);  // grid size
+  int blockSize = atoi(argv[3]); // block size
 
   // Allocate memory for arrays on the host
   float *x = (float *)malloc(N * sizeof(float));
@@ -38,10 +46,7 @@ int main(void) {
   cudaMemcpy(d_y, y, N * sizeof(float), cudaMemcpyHostToDevice);
 
   // Launch the CUDA kernel
-  //   int threadsPerBlock = 256;
-  //   int blocksPerGrid = (N + threadsPerBlock - 1) / threadsPerBlock;
-  //   multiply<<<blocksPerGrid, threadsPerBlock>>>(N, d_x, d_y, d_z);
-  multiply<<<1, 1>>>(N, d_x, d_y, d_z);
+  multiply<<<gridSize, blockSize>>>(N, d_x, d_y, d_z);
 
   // Copy the result array from device to host
   cudaMemcpy(z, d_z, N * sizeof(float), cudaMemcpyDeviceToHost);
