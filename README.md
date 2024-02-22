@@ -11,3 +11,6 @@ It is for discovering the basics of CUDA programming and the use of the GPU for 
 🚧 Work in progress 🚧
 
 ![my gpu config](image.png)
+
+Time for all the GPU experimentation:
+![cuda results](image-1.png)
