@@ -42,6 +42,7 @@ for log_file in tqdm(log_files):
 
     # Calculate sum of GPU activities
     gpu_data = data[data["Type ()"] == "GPU activities"]
+    print(gpu_data)
     gpu_sum = gpu_data["Time (us)"].sum() * 1e-6
     # gpu_sum = data["GPU activities"].sum()
 
@@ -77,6 +78,7 @@ plt.colorbar(sc)
 ax.set_xlabel("Block Size")
 ax.set_ylabel("Array Size")
 ax.set_label("Grid Size")
+fig.suptitle("GPU results")
 
 plt.savefig(output_png)
 print(f"Plot saved to {output_png}")
