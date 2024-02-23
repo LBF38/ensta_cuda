@@ -6,11 +6,9 @@ It is for discovering the basics of CUDA programming and the use of the GPU for 
 > [!TIP]
 > You can see the subject of the TP [here](./docs/240208%20TP%20GPU%20CUDA.pdf).
 
-## Documentation & notes
+## Documentation
 
-🚧 Work in progress 🚧
+You can find the documentation of the project in the `docs` folder.
 
-![my gpu config](image.png)
-
-Time for all the GPU experimentation:
-![cuda results](image-1.png)
+> [!IMPORTANT]
+> Please read the [README.md](./docs/README.md) file for the complete analysis of the programs.
