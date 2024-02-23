@@ -5,7 +5,7 @@ make
 bin_path="./bin/"
 py_prog="src/analysis.py"
 
-for prog in seq_array add_matrix; do
+for prog in seq_array add_matrix mult_array; do
     echo "Running $prog"
     for i in {4..11}; do
         size=$((2 ** i))

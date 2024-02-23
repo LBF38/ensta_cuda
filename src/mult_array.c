@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
   multiply_arrays(array1, array2, result, size);
   end = clock();
   cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-  printf("%d,Multiplication,result,%f\n", size, cpu_time_used);
+  printf("%d,Addition,result,%f\n", size, cpu_time_used);
 
   free(array1);
   free(array2);
