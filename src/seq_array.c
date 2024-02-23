@@ -5,7 +5,7 @@
 void initialize_array(int *array, int size) {
   srand(time(0));
   for (int i = 0; i < size; i++) {
-    array[i] = rand() % 100; // Generate random integers between 0 and 99
+    array[i] = rand() / (float)RAND_MAX;
   }
 }
 
